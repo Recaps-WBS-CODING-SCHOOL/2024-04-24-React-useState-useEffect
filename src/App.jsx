@@ -7,7 +7,7 @@ function App() {
   // let firstName = 'Garrett';
   const [toggle, setToggle] = useState(false);
 
-  const [firstName, setFirstName] = useState('Garrett');
+  // const [firstName, setFirstName] = useState('Garrett');
 
   const [hue, setHue] = useState(142);
 
@@ -38,7 +38,8 @@ function App() {
 
         <button
           onClick={() => {
-            setFirstName('Thomas');
+            // setFirstName('Thomas');
+            setFormData({ ...formData, firstName: 'Thomas' });
           }}
         >
           Change Name to Thomas
@@ -68,7 +69,7 @@ function App() {
         </form>
       </div>
 
-      <button onClick={() => setToggle((p) => !p)}>Mount Example</button>
+      <button onClick={() => setToggle((p) => !p)}>{toggle ? 'Dismount' : 'Mount'} Example</button>
       {toggle && <EffectExample />}
     </div>
   );
